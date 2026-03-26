@@ -1,18 +1,29 @@
 This is a CLI tool to upload your match history to ballchasing.com after each Rocket League session.
 
-It is meant to be added to the steam launch options so it runs every time you close the game.
+It is meant to be added to the steam launch options so it runs every time you close the game, but you can also run it manually or as a cron job.
+
+### Advantages of this tool over [mark-codes-stuff/ballchasing_replay_uploader](https://github.com/mark-codes-stuff/ballchasing_replay_uploader)
+
+- You don't need to save every replay manually
+- Works on any platform, (Epic Games, Steam, PlayStation, Xbox)
+
+### Disadvantage
+
+- Up to 20 replays per session https://www.rocketleague.com/en/news/introducing-rocket-league-match-history-and-player-profiles, so you'll have to close the game every 20 games (you should also go touch grass).
+
+In theory you could just cron this script to run every hour and you'd never have that issue but the script logs your game out of epic services, so that might be annoying if it triggers while playing. I have not tried this but at the very least you will be kicked from your party.
 
 ## Install
 
 - Download a binary from releases
-- Run it once and set the auth tokens
-- Add the following launch argument to rocket league
+- Run it once eg in the terminal to set the auth tokens for EGS and ballchasing.com
+- Add the following launch argument to Rocket League on Steam
 
 ```sh
 %command%; ./<the path to the binary you downloaded>
 ```
 
-- Play a game and see it appear on ballchasing
+- Play a game, close the game, and see it appear on ballchasing.com
 
 ### For developers
 
