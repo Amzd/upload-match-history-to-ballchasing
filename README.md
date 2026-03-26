@@ -5,7 +5,7 @@ It is meant to be added to the steam launch options so it runs every time you cl
 ### Advantages of this tool over [mark-codes-stuff/ballchasing_replay_uploader](https://github.com/mark-codes-stuff/ballchasing_replay_uploader)
 
 - You don't need to save every replay manually
-- Works on any platform, (Epic Games, Steam, PlayStation, Xbox)
+- Works with games played on any platform (Epic Games, Steam, PlayStation, Xbox, Nintentdo Switch)
 
 ### Disadvantage
 
