@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '[0-9]*'
+
+jobs:
+  build:
+    name: Build and Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Build Linux
+        run: GOOS=linux GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o upload-match-history-to-ballchasing-linux-amd64 .
+
+      - name: Build Windows
+        run: GOOS=windows GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o upload-match-history-to-ballchasing-windows-amd64.exe .
+
+      - name: Generate checksums
+        run: sha256sum upload-match-history-to-ballchasing-linux-amd64 upload-match-history-to-ballchasing-windows-amd64.exe > SHA256SUMS
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            upload-match-history-to-ballchasing-linux-amd64
+            upload-match-history-to-ballchasing-windows-amd64.exe
+            SHA256SUMS
