@@ -88,7 +88,7 @@ func getToken() string {
 	}
 
 	// Prompt user
-	fmt.Print("https://ballchasing.com/upload")
+	fmt.Println("https://ballchasing.com/upload")
 	fmt.Print("Enter your ballchasing.com API token: ")
 	reader := bufio.NewReader(os.Stdin)
 	token, _ := reader.ReadString('\n')
