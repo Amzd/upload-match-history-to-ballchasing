@@ -13,6 +13,8 @@ It is meant to be added to the steam launch options so it runs every time you cl
 
 In theory you could just cron this script to run every hour and you'd never have that issue but the game disconnects from epic services when the script runs (because only one auth session at a time is allowed), so that might be annoying if it triggers while playing. I have not tried it but at the very least you will be disconnected from your party.
 
+Note: This limit only really matters if you pay for ballchasing.com as their daily limit for free users is only 20.
+
 ## Install
 
 - Download a binary from releases
