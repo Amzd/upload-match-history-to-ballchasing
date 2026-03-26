@@ -16,7 +16,9 @@ import (
 )
 
 func main() {
-	slog.SetLogLoggerLevel(slog.LevelDebug)
+	// slog.SetLogLoggerLevel(slog.LevelDebug)
+
+	fmt.Println("Storing cache in ", getCacheDir())
 
 	rpc, _ := RPC()
 	defer rpc.Close()
