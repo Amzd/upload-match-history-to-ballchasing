@@ -12,7 +12,6 @@ import (
 	"strings"
 )
 
-const tokenFile = ".bctoken"
 const apiURL = "https://ballchasing.com/api/replays"
 
 func uploadReplay(filePath string) error {
@@ -20,7 +19,7 @@ func uploadReplay(filePath string) error {
 	for {
 		if err := verifyToken(token); err != nil {
 			fmt.Println("Invalid token, try again.")
-			os.Remove(tokenFile)
+			os.Remove(bcTokenFile)
 			token = getToken()
 			continue
 		}
@@ -84,7 +83,7 @@ func uploadReplay(filePath string) error {
 
 func getToken() string {
 	// Try reading from file
-	if data, err := os.ReadFile(tokenFile); err == nil {
+	if data, err := os.ReadFile(bcTokenFile); err == nil {
 		return strings.TrimSpace(string(data))
 	}
 
@@ -96,7 +95,7 @@ func getToken() string {
 	token = strings.TrimSpace(token)
 
 	// Save to file
-	err := os.WriteFile(tokenFile, []byte(token), 0600)
+	err := os.WriteFile(bcTokenFile, []byte(token), 0600)
 	if err != nil {
 		fmt.Println("Warning: could not save token:", err)
 	}

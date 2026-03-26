@@ -17,7 +17,7 @@ func RPC() (*rlapi.PsyNetRPC, rlapi.PlayerID) {
 	var auth *rlapi.TokenResponse
 	var authToken *rlapi.EOSTokenResponse
 
-	if refreshTokenData, err := os.ReadFile(".rltoken"); err == nil && len(strings.TrimSpace(string(refreshTokenData))) > 0 {
+	if refreshTokenData, err := os.ReadFile(rlTokenFile); err == nil && len(strings.TrimSpace(string(refreshTokenData))) > 0 {
 		refreshToken := strings.TrimSpace(string(refreshTokenData))
 		auth, err = egs.AuthenticateWithRefreshToken(refreshToken)
 		if err != nil {
@@ -28,7 +28,7 @@ func RPC() (*rlapi.PsyNetRPC, rlapi.PlayerID) {
 		auth = authenticateWithCode(egs)
 	}
 
-	err := os.WriteFile(".rltoken", []byte(auth.RefreshToken), 0644)
+	err := os.WriteFile(rlTokenFile, []byte(auth.RefreshToken), 0644)
 	if err != nil {
 		slog.Error("Failed to save refresh token", slog.Any("err", err))
 	}

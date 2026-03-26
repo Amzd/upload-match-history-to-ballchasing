@@ -8,6 +8,7 @@ import (
 	"log/slog"
 	"net/http"
 	"os"
+	"path/filepath"
 	"strings"
 	"time"
 
@@ -90,7 +91,7 @@ func downloadFile(url string) (string, error) {
 func loadUploadedCache() map[string]bool {
 	cache := make(map[string]bool)
 
-	file, err := os.Open(".uploaded")
+	file, err := os.Open(uploadedCacheFile)
 	if err != nil {
 		if os.IsNotExist(err) {
 			return cache // no cache yet
@@ -111,7 +112,7 @@ func loadUploadedCache() map[string]bool {
 }
 
 func appendToUploadedCache(url string) {
-	f, err := os.OpenFile(".uploaded", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0600)
+	f, err := os.OpenFile(uploadedCacheFile, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0600)
 	if err != nil {
 		panic(err)
 	}
@@ -121,4 +122,19 @@ func appendToUploadedCache(url string) {
 	if err != nil {
 		panic(err)
 	}
+}
+
+
+var rlTokenFile = filepath.Join(getCacheDir(), ".rltoken")
+var bcTokenFile = filepath.Join(getCacheDir(), ".bctoken")
+var uploadedCacheFile = filepath.Join(getCacheDir(), ".uploaded")
+
+func getCacheDir() string {
+	dir, err := os.UserCacheDir()
+	if err != nil {
+		panic(err)
+	}
+	dir = filepath.Join(dir, "upload-match-history-to-ballchasing")
+	os.MkdirAll(dir, 0700)
+	return dir
 }
