@@ -11,7 +11,7 @@ It is meant to be added to the steam launch options so it runs every time you cl
 
 - Up to 20 replays per session https://www.rocketleague.com/en/news/introducing-rocket-league-match-history-and-player-profiles, so you'll have to run the script manually or close Rocket League every 20 games (you should also go touch grass).
 
-In theory you could just cron this script to run every hour and you'd never have that issue but the script the game disconnects from epic services when the script runs (because only one auth session at a time is allowed), so that might be annoying if it triggers while playing. I have not tried it but at the very least you will be disconnected from your party.
+In theory you could just cron this script to run every hour and you'd never have that issue but the game disconnects from epic services when the script runs (because only one auth session at a time is allowed), so that might be annoying if it triggers while playing. I have not tried it but at the very least you will be disconnected from your party.
 
 ## Install
 
