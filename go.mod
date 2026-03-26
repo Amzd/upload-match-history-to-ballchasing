@@ -1,4 +1,4 @@
-module upload-match-history-to-ballchasing
+module github.com/amzd/upload-match-history-to-ballchasing
 
 go 1.26.1
 
