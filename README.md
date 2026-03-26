@@ -1,4 +1,4 @@
-This is a CLI tool to upload your match history to ballchasing.com after each Rocket League session.
+This is a CLI tool to upload your match history to ballchasing.com after each Rocket League session. This is needed because the bakkesmod replay uploader will not work anymore when Rocket League implements anti-cheat.
 
 It is meant to be added to the steam launch options so it runs every time you close the game, but you can also run it manually or as a cron job.
 
@@ -9,9 +9,9 @@ It is meant to be added to the steam launch options so it runs every time you cl
 
 ### Disadvantage
 
-- Up to 20 replays per session https://www.rocketleague.com/en/news/introducing-rocket-league-match-history-and-player-profiles, so you'll have to close the game every 20 games (you should also go touch grass).
+- Up to 20 replays per session https://www.rocketleague.com/en/news/introducing-rocket-league-match-history-and-player-profiles, so you'll have to run the script manually or close Rocket League every 20 games (you should also go touch grass).
 
-In theory you could just cron this script to run every hour and you'd never have that issue but the script logs your game out of epic services, so that might be annoying if it triggers while playing. I have not tried this but at the very least you will be kicked from your party.
+In theory you could just cron this script to run every hour and you'd never have that issue but the script the game disconnects from epic services when the script runs (because only one auth session at a time is allowed), so that might be annoying if it triggers while playing. I have not tried it but at the very least you will be disconnected from your party.
 
 ## Install
 
@@ -25,7 +25,7 @@ In theory you could just cron this script to run every hour and you'd never have
 
 - Play a game, close the game, and see it appear on ballchasing.com
 
-### For developers
+### For golang enjoyers
 
 If you have `go` installed you can run
 
