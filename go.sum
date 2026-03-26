@@ -1,0 +1,4 @@
+github.com/dank/rlapi v0.1.12 h1:1j4P2IX7Fk2w+o/sFGyfYCbsrlcGjfQbyCidHd887yY=
+github.com/dank/rlapi v0.1.12/go.mod h1:Ni9EDtQdYIjBGYola2qbdDDqTl9+x5zI5eC3p0P+04w=
+github.com/gorilla/websocket v1.5.3 h1:saDtZ6Pbx/0u+bgYQ3q96pZgCzfhKXGPqt7kZ72aNNg=
+github.com/gorilla/websocket v1.5.3/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
