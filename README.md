@@ -35,3 +35,7 @@ If you have `go` installed you can run
 go install github.com/Amzd/upload-match-history-to-ballchasing@latest
 ```
 and use it like `%command%; ~/go/bin/upload-match-history-to-ballchasing`
+
+## AI Use
+
+Copilot was used to generate the github action that creates builds. No AI generated code is in the program.
