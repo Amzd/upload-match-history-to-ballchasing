@@ -21,9 +21,16 @@ Note: This limit only really matters if you pay for ballchasing.com as their dai
 - Run it once eg in the terminal to set the auth tokens for EGS and ballchasing.com
 - Add the following launch argument to Rocket League on Steam
 
+Linux:
 ```sh
 %command%; ./<the path to the binary you downloaded>
 ```
+
+Windows:
+```sh
+%command%; "C:\Users\YOUR_USER_NAME\Desktop\upload-match-history-to-ballchasing-windows-amd64.exe"
+```
+
 
 - Play a game, close the game, and see it appear on ballchasing.com
 
