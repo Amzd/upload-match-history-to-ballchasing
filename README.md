@@ -28,7 +28,7 @@ Linux:
 
 Windows:
 ```sh
-%command%; "C:\Users\YOUR_USER_NAME\Desktop\upload-match-history-to-ballchasing-windows-amd64.exe"
+cmd /c start "" "%command%" && start "" "C:\Users\YOUR_USER_NAME\Downloads\upload-match-history-to-ballchasing-windows-amd64.exe"
 ```
 
 
