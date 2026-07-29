@@ -31,7 +31,7 @@ jobs:
         run: sha256sum upload-match-history-to-ballchasing-linux-amd64 upload-match-history-to-ballchasing-windows-amd64.exe > SHA256SUMS
 
       - name: Create Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: |
             upload-match-history-to-ballchasing-linux-amd64
